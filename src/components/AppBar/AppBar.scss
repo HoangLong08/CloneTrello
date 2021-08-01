@@ -1,0 +1,10 @@
+@import "../../_setting.scss";
+$appBar-bg-color: #0067a3;
+.navbar-app {
+  // css rieeng cho thằng này
+  padding-left: $gap;
+  display: flex;
+  align-items: center;
+  background-color: $appBar-bg-color;
+  font-size: 1.5rem;
+}
