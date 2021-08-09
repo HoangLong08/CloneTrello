@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Column from "../Column/Column"
+import Column from '../Column/Column'
 import { isEmpty } from 'lodash'
-import "./BoardContent.scss"
-import { initialData } from "../../actions/initialData"
-import { mapOrder } from "../../utilies/sorts"
+import './BoardContent.scss'
+import { initialData } from '../../actions/initialData'
+import { Container, Draggable } from 'react-smooth-dnd'
+import { mapOrder } from '../../utilies/sorts'
 
 function BoardContent() {
 
@@ -11,7 +12,7 @@ function BoardContent() {
 	const [columns, setColumns] = useState([])
 
 	useEffect(() => {
-		const boardFromDB = initialData.boards.find(board => board.id === 'board-1');
+		const boardFromDB = initialData.boards.find(board => board.id === 'board-1')
 		if (boardFromDB) {
 			setBoard(boardFromDB)
 
@@ -25,15 +26,35 @@ function BoardContent() {
 			</div>
 		)
 	}
-	console.log("columns: ", columns)
+
+	const onColumnDrop = (dropResult) => {
+		console.log('dropResult: ', dropResult)
+	}
+
 	return (
 		<>
 			<div className="board-content">
-				{columns.map((item, index) => {
-					return (
-						<Column key={index} column={item} />
-					)
-				})}
+				<Container
+					orientation="horizontal" // chiều ngang hay doc các element
+					onDrop={onColumnDrop}
+					getChildPayload={index =>
+						columns[index]
+					}
+					dragHandleSelector=".column-drag-handle" // chỉ thị vùng kéo
+					dropPlaceholder={{
+						animationDuration: 150,
+						showOnTop: true,
+						className: 'column-drop-preview'
+					}}
+				>
+					{columns.map((item, index) => {
+						return (
+							<Draggable key={index}>
+								<Column column={item} />
+							</Draggable>
+						)
+					})}
+				</Container>
 			</div>
 		</>
 	)

@@ -1,7 +1,5 @@
 @import "./_setting.scss";
 
-
-
 body {
   margin: 0;
   padding: 0;
@@ -12,9 +10,6 @@ body {
 
 .trello-master {
   height: 100vh;
-  display: grid;
-  grid-template-rows: 40px 50px 1fr; // three row
+  overflow: hidden;
   background-color: $board-bg-color;
-
-  
 }
