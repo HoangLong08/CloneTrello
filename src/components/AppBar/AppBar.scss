@@ -2,6 +2,7 @@
 $appBar-bg-color: #0067a3;
 .navbar-app {
   // css rieeng cho thằng này
+  height: $navbar-app-height;
   padding-left: $gap;
   display: flex;
   align-items: center;

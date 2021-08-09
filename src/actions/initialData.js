@@ -17,7 +17,7 @@ export const initialData = {
 							boardId: 'board-1',
 							columnId: 'column-1',
 							title: 'Title of card 1',
-							cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+							cover: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'
 						},
 						{
 							id: 'card-2',
@@ -51,14 +51,22 @@ export const initialData = {
 							id: 'card-6',
 							boardId: 'board-1',
 							columnId: 'column-1',
-							title: 'Title of card 5',
+							title: 'Title of card 6',
 							cover: null
 						},
 						{
 							id: 'card-7',
 							boardId: 'board-1',
 							columnId: 'column-1',
-							title: 'Title of card 5',
+							title: 'Title of card 7',
+							cover: null
+						}
+						,
+						{
+							id: 'card-8',
+							boardId: 'board-1',
+							columnId: 'column-1',
+							title: 'Title of card 8',
 							cover: null
 						}
 
@@ -96,7 +104,7 @@ export const initialData = {
 				}
 
 			]
-		},
+		}
 
 	]
 }
